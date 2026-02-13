@@ -20,9 +20,9 @@ This project demonstrates a **Django REST Framework** API for uploading and mana
 
 1. Clone the repository:
 
-```bash
+
 git clone https://github.com/srashtisikarwar/django-fileupload-api.git
-cd django-fileupload-api
+cd fileupload
 
 # Create a virtual environment
 python -m venv env
@@ -96,7 +96,7 @@ Sample JSON Response:
     "image": "http://127.0.0.1:8000/media/images/Apple_iPhone_15_Pro.jpeg",
     "created_at": "2026-02-13T10:20:11.197567Z"
 }
-```
+
 
 ## 📸 API Testing Screenshots
 
