@@ -115,6 +115,8 @@ Key	Type	Example
 name	Text	iPhone 15 Pro
 description	Text	High-resolution product image
 image / resume	File	Select file
+
+
 📦 Sample JSON Response
 {
     "id": 9,
