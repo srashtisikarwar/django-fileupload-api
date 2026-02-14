@@ -20,27 +20,34 @@ This project demonstrates a **Django REST Framework** API for uploading and mana
 
 1. Clone the repository:
 
-
+```bash
 git clone https://github.com/srashtisikarwar/django-fileupload-api.git
+cd django-fileupload-api
+⚠️ Optional: clone into a custom folder name:
+
+git clone https://github.com/srashtisikarwar/django-fileupload-api.git fileupload
 cd fileupload
+```
+Create a virtual environment:
 
-# Create a virtual environment
 python -m venv env
+Activate the environment:
 
-# Activate environment
-source env/bin/activate      # Linux / macOS
-env\Scripts\activate         # Windows
+# Linux / macOS
+source env/bin/activate
 
-# Install dependencies
+# Windows
+env\Scripts\activate
+Install dependencies:
+
 pip install -r requirements.txt
+Apply migrations:
 
-# Apply migrations
 python manage.py makemigrations
 python manage.py migrate
+Run the server:
 
-# Run server
 python manage.py runserver
-
 📁 Folder Structure
 project_root/
 │
@@ -60,10 +67,10 @@ project_root/
 ├── manage.py
 └── README.md
 
+
 🚀 Usage
 1️⃣ Browser Upload
-
-Go to Django Browsable API page:
+Go to Django Browsable API page (server must be running locally):
 
 http://127.0.0.1:8000/api/images/
 http://127.0.0.1:8000/api/resumes/
@@ -73,20 +80,19 @@ Uploaded files will be stored in:
 
 media/images/
 media/resumes/
-
 2️⃣ API Upload (Postman)
-Endpoint for Images:
-POST http://127.0.0.1:8000/api/images/
+Local endpoints (only work while server is running locally):
 
-Endpoint for Resumes:
-POST http://127.0.0.1:8000/api/resumes/
+Images: POST http://127.0.0.1:8000/api/images/
+
+Resumes: POST http://127.0.0.1:8000/api/resumes/
 
 Body → form-data:
 
 Key	Type	Example
 name	Text	iPhone 15 Pro
-description	Text	High-resolution product image uploaded via API
-image	File	choose image file
+description	Text	High-resolution product image
+image/resume	File	Choose file to upload
 Sample JSON Response:
 
 {
@@ -97,36 +103,25 @@ Sample JSON Response:
     "created_at": "2026-02-13T10:20:11.197567Z"
 }
 
-
 ## 📸 API Testing Screenshots
 
 ### 🌐 Browser Testing (Django Browsable API)
 
 #### API Root
-![API Root](screenshots/browser/api_root.png)
+![API Root](https://github.com/srashtisikarwar/django-fileupload-api/raw/main/screenshots/browser/api_root.png)
 
 #### Image List
-![Image List](screenshots/browser/image_list.png)
+![Image List](https://github.com/srashtisikarwar/django-fileupload-api/raw/main/screenshots/browser/image_list.png)
 
 #### Resume List
-![Resume List](screenshots/browser/resume_list.png)
+![Resume List](https://github.com/srashtisikarwar/django-fileupload-api/raw/main/screenshots/browser/resume_list.png)
 
 #### Resume Detail
-![Resume Detail](screenshots/browser/resume_detail.png)
+![Resume Detail](https://github.com/srashtisikarwar/django-fileupload-api/raw/main/screenshots/browser/resume_detail.png)
 
 
----
 
-### 🧪 Postman Testing
-
-#### Image Upload (POST)
-![Postman Image Upload](screenshots/Postman/image_upload.PNG)
-
-#### Resume Upload (POST)
-![Postman Resume Upload](screenshots/Postman/resume_upload.PNG)
-
-#### Resume List
-![Resume List](screenshots/Postman/resume_list.png)
-
-#### Image List
-![Image List](screenshots/Postman/image_list.png)
+![Postman Image Upload](screenshots/postman/upload_image.png)
+![Postman Resume Upload](screenshots/postman/upload_resume.png)
+![Postman Resume List](screenshots/postman/resume_upload_list.png)
+![Postman Image List](screenshots/postman/image_upload_list.png)
