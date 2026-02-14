@@ -1,60 +1,85 @@
-# 🗂 Django REST File Upload Project
+🗂 Django REST File Upload API
 
-This project demonstrates a **Django REST Framework** API for uploading and managing files (images and resumes) with proper storage and retrieval.
+A production-ready Django REST Framework API for uploading and managing Images and Resume files with proper media handling, filtering, and full CRUD operations.
 
----
+This project demonstrates clean API architecture, structured media storage, and professional documentation suitable for portfolio and backend development practice.
 
-## 📌 Features
+##🚀 Features
 
-- Upload **images** and **resumes** via API or browser
-- Browse uploaded files using **Django Browsable API**
-- Retrieve file list and file details
-- Supports **POST, GET, PATCH, DELETE** operations
-- Proper media storage in `media/` folder
-- Filter uploaded files by `name`
-- Fully documented API with screenshots
+📤 Upload Images and Resume files
 
----
+📂 Organized media storage (media/images/, media/resumes/)
 
-## ⚙️ Installation
+🔎 Filter records by name
 
-1. Clone the repository:
+📄 Retrieve file lists and detail views
 
-```bash
+🔄 Full CRUD support (POST, GET, PATCH, DELETE)
+
+🌐 Django Browsable API support
+
+🧪 Tested using Postman
+
+📸 Well-documented with screenshots
+
+##📋 Requirements
+
+Python 3.10+
+
+Django 4+
+
+Django REST Framework
+
+Virtual Environment (recommended)
+
+##⚙️ Installation & Setup
+1️⃣ Clone the Repository
 git clone https://github.com/srashtisikarwar/django-fileupload-api.git
 cd django-fileupload-api
-⚠️ Optional: clone into a custom folder name:
+
+
+(Optional – clone into custom folder)
 
 git clone https://github.com/srashtisikarwar/django-fileupload-api.git fileupload
 cd fileupload
-```
-Create a virtual environment:
 
+2️⃣ Create Virtual Environment
 python -m venv env
-Activate the environment:
 
-# Linux / macOS
+
+Activate environment:
+
+Linux / macOS
+
 source env/bin/activate
 
-# Windows
+
+Windows
+
 env\Scripts\activate
-Install dependencies:
 
+3️⃣ Install Dependencies
 pip install -r requirements.txt
-Apply migrations:
 
+4️⃣ Apply Migrations
 python manage.py makemigrations
 python manage.py migrate
-Run the server:
 
+5️⃣ Run Development Server
 python manage.py runserver
-📁 Folder Structure
+
+
+Server will start at:
+
+http://127.0.0.1:8000/
+
+##📁 Project Structure
 project_root/
 │
 ├── upload/               # Django app
 │   ├── models.py
 │   ├── views.py
-│   └── serializers.py
+│   ├── serializers.py
 │
 ├── media/                # Uploaded files
 │   ├── images/
@@ -67,38 +92,34 @@ project_root/
 ├── manage.py
 └── README.md
 
+##🌐 API Endpoints
+Images
+POST   /api/images/
+GET    /api/images/
+GET    /api/images/<id>/
+PATCH  /api/images/<id>/
+DELETE /api/images/<id>/
 
-🚀 Usage
-1️⃣ Browser Upload
-Go to Django Browsable API page (server must be running locally):
+Resumes
+POST   /api/resumes/
+GET    /api/resumes/
+GET    /api/resumes/<id>/
+PATCH  /api/resumes/<id>/
+DELETE /api/resumes/<id>/
 
-http://127.0.0.1:8000/api/images/
-http://127.0.0.1:8000/api/resumes/
-Use the HTML form to upload files.
+##🧪 Example POST Request (Postman)
 
-Uploaded files will be stored in:
-
-media/images/
-media/resumes/
-2️⃣ API Upload (Postman)
-Local endpoints (only work while server is running locally):
-
-Images: POST http://127.0.0.1:8000/api/images/
-
-Resumes: POST http://127.0.0.1:8000/api/resumes/
-
-Body → form-data:
+Body → form-data
 
 Key	Type	Example
 name	Text	iPhone 15 Pro
 description	Text	High-resolution product image
-image/resume	File	Choose file to upload
-Sample JSON Response:
-
+image / resume	File	Select file
+📦 Sample JSON Response
 {
     "id": 9,
     "name": "Apple iPhone 15 Pro",
-    "description": "High-resolution product image of Apple iPhone uploaded via Django REST Framework API to demonstrate image upload, media storage handling, and retrieval using list and detail endpoints",
+    "description": "High-resolution product image uploaded via Django REST Framework API",
     "image": "http://127.0.0.1:8000/media/images/Apple_iPhone_15_Pro.jpeg",
     "created_at": "2026-02-13T10:20:11.197567Z"
 }
@@ -107,17 +128,20 @@ Sample JSON Response:
 
 ### 🌐 Browser Testing (Django Browsable API)
 
-#### API Root
-![API Root](https://github.com/srashtisikarwar/django-fileupload-api/raw/main/screenshots/browser/api_root.png)
+## 🌐 Browser Testing (Django Browsable API)
 
-#### Image List
-![Image List](https://github.com/srashtisikarwar/django-fileupload-api/raw/main/screenshots/browser/image_list.png)
+### API Overview
+- **API Root**
+  ![API Root](screenshots/browser/api_root.png)
 
-#### Resume List
-![Resume List](https://github.com/srashtisikarwar/django-fileupload-api/raw/main/screenshots/browser/resume_list.png)
+- **Image List Endpoint**
+  ![Image List](screenshots/browser/image_list.png)
 
-#### Resume Detail
-![Resume Detail](https://github.com/srashtisikarwar/django-fileupload-api/raw/main/screenshots/browser/resume_detail.png)
+- **Resume List Endpoint**
+  ![Resume List](screenshots/browser/resume_list.png)
+
+- **Resume Detail View**
+  ![Resume Detail](screenshots/browser/resume_detail.png)
 
 
 
