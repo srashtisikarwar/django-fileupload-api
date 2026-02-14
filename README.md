@@ -121,7 +121,16 @@ Sample JSON Response:
 
 
 
+### 🧪 Postman Testing
+
+#### 📤 Image Upload (POST)
 ![Postman Image Upload](screenshots/postman/upload_image.png)
+
+#### 📄 Resume Upload (POST)
 ![Postman Resume Upload](screenshots/postman/upload_resume.png)
+
+#### 📋 Resume List (GET)
 ![Postman Resume List](screenshots/postman/resume_upload_list.png)
+
+#### 🖼 Image List (GET)
 ![Postman Image List](screenshots/postman/image_upload_list.png)
